@@ -1,0 +1,12 @@
+com\bol\mancala\util\Assert.class
+com\bol\mancala\main\MancalaSpringApplication.class
+com\bol\mancala\util\Message.class
+com\bol\mancala\view\MancalaView$1.class
+com\bol\mancala\exception\CustomExceptionHandlerFactory.class
+com\bol\mancala\exception\MancalaException.class
+com\bol\mancala\model\PlayRound.class
+com\bol\mancala\service\MancalaEngine.class
+com\bol\mancala\model\GameStatus.class
+com\bol\mancala\view\MancalaView.class
+com\bol\mancala\model\Player.class
+com\bol\mancala\exception\CustomExceptionHandler.class

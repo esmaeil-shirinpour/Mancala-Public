@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Mancala Game</title>
+</h:head>
+<h:body>
+
+	<style type="text/css">
+		.ui-panelgrid .ui-grid-responsive .ui-panelgrid-cell {
+			text-align: center;
+		}
+	</style>
+
+
+	<h:form id="form" >
+
+		<p:messages id="messages" showDetail="true" closable="true">
+			<p:autoUpdate />
+		</p:messages>
+
+		<p:panelGrid style="margin-top:20px" id="grid">
+			<f:facet name="header">
+				<p:row>
+					<p:column colspan="8">Player 1</p:column>
+				</p:row>
+			</f:facet>
+
+			<p:row style="text-align: end;">
+
+				<p:column rowspan="2" style="font-weight: bold;">
+					<h:outputText value="#{mancalaView.player1.bigPit}" />
+				</p:column>
+
+				<p:column style="font-weight: bold;">
+					<p:commandLink    id="p1pit5" update="@form" process="@this"  action="#{mancalaView.play('PLAYER_ONE',5)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player1.pits[5]}" />
+					</p:commandLink>
+				</p:column>
+
+				<p:column style="font-weight: bold;">
+					<p:commandLink  id="p1pit4" update="@form" action="#{mancalaView.play('PLAYER_ONE',4)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player1.pits[4]}" />
+					</p:commandLink>
+				</p:column>
+
+				<p:column style="font-weight: bold;">
+					<p:commandLink  id="p1pit3" update="@form" action="#{mancalaView.play('PLAYER_ONE',3)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player1.pits[3]}" />
+					</p:commandLink>
+				</p:column>
+
+				<p:column style="font-weight: bold;">
+					<p:commandLink  id="p1pit2" update="@form" action="#{mancalaView.play('PLAYER_ONE',2)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player1.pits[2]}" />
+					</p:commandLink>
+				</p:column>
+
+
+				<p:column style="font-weight: bold;">
+					<p:commandLink  id="p1pit1" update="@form" action="#{mancalaView.play('PLAYER_ONE',1)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player1.pits[1]}" />
+					</p:commandLink>
+				</p:column>
+
+				<p:column style="font-weight: bold;">
+					<p:commandLink  id="p1pit0" update="@form" action="#{mancalaView.play('PLAYER_ONE',0)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player1.pits[0]}" />
+					</p:commandLink>
+				</p:column>
+
+				<p:column colspan="1" styleClass="ui-widget-header">
+					<p:spacer height="0" width="25"/>
+				</p:column>
+			</p:row>
+
+			<p:row style="text-align: center;">
+				<p:column colspan="6" styleClass="ui-widget-header">
+					<p:spacer height="0"/>
+				</p:column>
+				<p:column rowspan="2" style="font-weight: bold;">
+					<h:outputText value="#{mancalaView.player2.bigPit}" />
+				</p:column>
+			</p:row>
+
+			<p:row style="text-align: end;">
+
+				<p:column colspan="1" styleClass="ui-widget-header">
+					<p:spacer height="0" width="25"/>
+				</p:column>
+				<p:column style="font-weight: bold;">
+					<p:commandLink id="p2pit0"    update="@form" action="#{mancalaView.play('PLAYER_TWO',0)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player2.pits[0]}" />
+					</p:commandLink>
+				</p:column>
+
+				<p:column style="font-weight: bold;">
+					<p:commandLink  id="p2pit1" update="@form" action="#{mancalaView.play('PLAYER_TWO',1)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player2.pits[1]}" />
+					</p:commandLink>
+				</p:column>
+
+				<p:column style="font-weight: bold;">
+					<p:commandLink  id="p2pit2" update="@form" action="#{mancalaView.play('PLAYER_TWO',2)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player2.pits[2]}" />
+					</p:commandLink>
+				</p:column>
+
+				<p:column style="font-weight: bold;">
+					<p:commandLink  id="p2pit3" update="@form" action="#{mancalaView.play('PLAYER_TWO',3)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player2.pits[3]}" />
+					</p:commandLink>
+				</p:column>
+
+				<p:column style="font-weight: bold;">
+					<p:commandLink  id="p2pit4" update="@form" action="#{mancalaView.play('PLAYER_TWO',4)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player2.pits[4]}" />
+					</p:commandLink>
+				</p:column>
+
+				<p:column style="font-weight: bold;">
+					<p:commandLink  id="p2pit5" update="@form" action="#{mancalaView.play('PLAYER_TWO',5)}" style="margin-right:20px;">
+						<h:outputText value="#{mancalaView.player2.pits[5]}" />
+					</p:commandLink>
+				</p:column>
+
+			</p:row>
+			<f:facet name="footer">
+				<p:row>
+					<p:column colspan="8" style="text-align: center;">Player 2</p:column>
+				</p:row>
+			</f:facet>
+
+		</p:panelGrid>
+
+	</h:form>
+
+</h:body>
+</html>
